@@ -50,9 +50,9 @@ CREATE TABLE `ExamUser` (
 -- CreateTable
 CREATE TABLE `FeedbackExam` (
     `id` INTEGER NOT NULL,
-    `feedback` VARCHAR(191) NOT NULL,
-    `usersIdFK` INTEGER NOT NULL,
+    `usercpfFK` INTEGER NOT NULL,
     `result` VARCHAR(191) NOT NULL,
+    `feedbacks` JSON NOT NULL,
     `examsIdFK` INTEGER NOT NULL,
 
     UNIQUE INDEX `FeedbackExam_id_key`(`id`)
@@ -114,7 +114,7 @@ ALTER TABLE `ExamUser` ADD CONSTRAINT `ExamUser_examsFK_fkey` FOREIGN KEY (`exam
 ALTER TABLE `ExamUser` ADD CONSTRAINT `ExamUser_userFK_fkey` FOREIGN KEY (`userFK`) REFERENCES `Users`(`cpf`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `FeedbackExam` ADD CONSTRAINT `FeedbackExam_usersIdFK_fkey` FOREIGN KEY (`usersIdFK`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `FeedbackExam` ADD CONSTRAINT `FeedbackExam_usercpfFK_fkey` FOREIGN KEY (`usercpfFK`) REFERENCES `Users`(`cpf`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `FeedbackExam` ADD CONSTRAINT `FeedbackExam_examsIdFK_fkey` FOREIGN KEY (`examsIdFK`) REFERENCES `Exams`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

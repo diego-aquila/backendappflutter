@@ -61,8 +61,8 @@ model ExamUser {
 
 model FeedbackExam {
   id        Int    @unique
-  Users     Users  @relation(fields: [usersIdFK], references: [id])
-  usersIdFK Int
+  Users     Users  @relation(fields: [usercpfFK], references: [cpf])
+  usercpfFK Int
   result    String
   feedbacks Json
 
