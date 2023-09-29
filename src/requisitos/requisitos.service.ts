@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateRequisitoDto } from './dto/create-requisito.dto';
 import { UpdateRequisitoDto } from './dto/update-requisito.dto';
-import { RequisitosRepository } from 'src/users/repositories/requisitos.repository';
+import { RequisitosRepository } from './repositories/requisitos.repository';
 
 @Injectable()
 export class RequisitosService {
