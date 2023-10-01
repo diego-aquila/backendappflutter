@@ -33,13 +33,13 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsString()
-  classFK: string;
+  classFK: number;
 
   @IsNotEmpty()
   @IsString()
-  roleFK: string;
+  roleFK: number;
 
   @IsNotEmpty()
   @IsString()
-  planFK: string;
+  planFK: number;
 }

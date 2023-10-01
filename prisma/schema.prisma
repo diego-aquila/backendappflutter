@@ -20,16 +20,16 @@ model Users {
 
   password String
   celphone String
-  class    Classes @relation(fields: [classFK], references: [name])
-  classFK  String
+  class    Classes @relation(fields: [classFK], references: [id])
+  classFK  Int
 
   ExamUser      ExamUser[]
   FeedbackExame FeedbackExam[]
 
-  Roles  Roles  @relation(fields: [roleFK], references: [name])
-  roleFK String
-  Plans  Plans  @relation(fields: [planFK], references: [name])
-  planFK String
+  Roles  Roles @relation(fields: [roleFK], references: [id])
+  roleFK Int
+  Plans  Plans @relation(fields: [planFK], references: [id])
+  planFK Int
 }
 
 model Classes {
@@ -95,6 +95,6 @@ model Mural {
   date  DateTime @default(now())
   title String
 
-  Classes Classes? @relation(fields: [classFK], references: [name])
-  classFK String
+  Classes Classes? @relation(fields: [classFK], references: [id])
+  classFK Int
 }

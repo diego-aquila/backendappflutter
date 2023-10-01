@@ -6,9 +6,10 @@ import { RequisitosModule } from './requisitos/requisitos.module';
 import { ClassesModule } from './classes/classes.module';
 import { ExamsModule } from './exams/exams.module';
 import { ExamUserModule } from './exam-user/exam-user.module';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
-  imports: [UsersModule, RequisitosModule, ClassesModule, ExamsModule, ExamUserModule],
+  imports: [UsersModule, RequisitosModule, ClassesModule, ExamsModule, ExamUserModule, RolesModule],
   controllers: [AppController],
   providers: [AppService],
 })

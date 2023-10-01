@@ -15,12 +15,12 @@ import { UpdateClassDto } from './dto/update-class.dto';
 export class ClassesController {
   constructor(private readonly classesService: ClassesService) {}
 
-  @Post()
+  @Post('create')
   create(@Body() createClassDto: CreateClassDto) {
     return this.classesService.create(createClassDto);
   }
 
-  @Get()
+  @Get('listall')
   findAll() {
     return this.classesService.findAll();
   }
@@ -30,12 +30,12 @@ export class ClassesController {
     return this.classesService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('update/:id')
   update(@Param('id') id: string, @Body() updateClassDto: UpdateClassDto) {
     return this.classesService.update(+id, updateClassDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.classesService.remove(+id);
   }

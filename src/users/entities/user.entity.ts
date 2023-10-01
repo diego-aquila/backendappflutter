@@ -8,7 +8,7 @@ export class UserEntity implements Users {
   cpf: number;
   password: string;
   celphone: string;
-  classFK: string;
-  roleFK: string;
-  planFK: string;
+  classFK: number;
+  roleFK: number;
+  planFK: number;
 }
