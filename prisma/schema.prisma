@@ -55,7 +55,7 @@ model ExamUser {
   exam    Exams @relation(fields: [examsFK], references: [id])
   examsFK Int
 
-  Users  Users  @relation(fields: [userFK], references: [cpf])
+  user   Users  @relation(fields: [userFK], references: [cpf])
   userFK String
 }
 
