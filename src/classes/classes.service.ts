@@ -18,6 +18,10 @@ export class ClassesService {
     return this.classesRepository.findOne(id);
   }
 
+  findUsersByClasses(id: number) {
+    return this.classesRepository.findUsersByClasses(id);
+  }
+
   update(id: number, updateClassDto: UpdateClassDto) {
     return this.classesRepository.update(id, updateClassDto);
   }

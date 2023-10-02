@@ -29,6 +29,10 @@ export class ClassesController {
   findOne(@Param('id') id: string) {
     return this.classesService.findOne(+id);
   }
+  @Get('usersbyclass/:id')
+  findUsersByClasses(@Param('id') id: string) {
+    return this.classesService.findUsersByClasses(+id);
+  }
 
   @Patch('update/:id')
   update(@Param('id') id: string, @Body() updateClassDto: UpdateClassDto) {

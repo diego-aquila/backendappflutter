@@ -16,7 +16,7 @@ model Users {
 
   isActive Boolean @default(true)
   name     String
-  cpf      Int     @unique
+  cpf      String  @unique
 
   password String
   celphone String
@@ -26,9 +26,9 @@ model Users {
   ExamUser      ExamUser[]
   FeedbackExame FeedbackExam[]
 
-  Roles  Roles @relation(fields: [roleFK], references: [id])
+  role   Roles @relation(fields: [roleFK], references: [id])
   roleFK Int
-  Plans  Plans @relation(fields: [planFK], references: [id])
+  plan   Plans @relation(fields: [planFK], references: [id])
   planFK Int
 }
 
@@ -55,14 +55,14 @@ model ExamUser {
   exam    Exams @relation(fields: [examsFK], references: [id])
   examsFK Int
 
-  Users  Users @relation(fields: [userFK], references: [cpf])
-  userFK Int
+  Users  Users  @relation(fields: [userFK], references: [cpf])
+  userFK String
 }
 
 model FeedbackExam {
   id        Int    @unique
   Users     Users  @relation(fields: [usercpfFK], references: [cpf])
-  usercpfFK Int
+  usercpfFK String
   result    String
   feedbacks Json
 

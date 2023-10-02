@@ -5,7 +5,7 @@ export class UserEntity implements Users {
   email: string;
   isActive: boolean;
   name: string;
-  cpf: number;
+  cpf: string;
   password: string;
   celphone: string;
   classFK: number;

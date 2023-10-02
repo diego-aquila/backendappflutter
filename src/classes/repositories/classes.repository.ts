@@ -14,13 +14,29 @@ export class ClassesRepository {
   }
 
   async findAll(): Promise<ClassEntity[]> {
-    return this.prisma.classes.findMany();
+    return this.prisma.classes.findMany({});
   }
 
   async findOne(id: number): Promise<ClassEntity> {
     return this.prisma.classes.findUnique({
       where: {
         id,
+      },
+    });
+  }
+
+  async findUsersByClasses(id: number): Promise<ClassEntity> {
+    return this.prisma.classes.findUnique({
+      where: {
+        id,
+      },
+      include: {
+        Users: {
+          select: {
+            name: true,
+            cpf: true,
+          },
+        },
       },
     });
   }

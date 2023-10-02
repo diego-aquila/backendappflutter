@@ -7,9 +7,10 @@ import { ClassesModule } from './classes/classes.module';
 import { ExamsModule } from './exams/exams.module';
 import { ExamUserModule } from './exam-user/exam-user.module';
 import { RolesModule } from './roles/roles.module';
+import { PlansModule } from './plans/plans.module';
 
 @Module({
-  imports: [UsersModule, RequisitosModule, ClassesModule, ExamsModule, ExamUserModule, RolesModule],
+  imports: [UsersModule, RequisitosModule, ClassesModule, ExamsModule, ExamUserModule, RolesModule, PlansModule],
   controllers: [AppController],
   providers: [AppService],
 })

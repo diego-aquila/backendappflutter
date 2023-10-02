@@ -20,8 +20,8 @@ export class CreateUserDto {
   name: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  cpf: number;
+  @IsString()
+  cpf: string;
 
   @IsNotEmpty()
   @IsString()
@@ -32,14 +32,14 @@ export class CreateUserDto {
   celphone: string;
 
   @IsNotEmpty()
-  @IsString()
+  @IsNumber()
   classFK: number;
 
   @IsNotEmpty()
-  @IsString()
+  @IsNumber()
   roleFK: number;
 
   @IsNotEmpty()
-  @IsString()
+  @IsNumber()
   planFK: number;
 }

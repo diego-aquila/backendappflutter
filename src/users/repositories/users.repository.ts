@@ -14,8 +14,32 @@ export class UsersRepository {
     });
   }
 
-  async findAll(): Promise<UserEntity[]> {
-    return this.prisma.users.findMany();
+  async findAll() {
+    return this.prisma.users.findMany({
+      select: {
+        id: true,
+        isActive: true,
+        name: true,
+        cpf: true,
+        celphone: true,
+
+        class: {
+          select: {
+            name: true,
+          },
+        },
+        plan: {
+          select: {
+            name: true,
+          },
+        },
+        role: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
   }
 
   async findOne(id: number): Promise<UserEntity> {
