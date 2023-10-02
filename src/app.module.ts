@@ -10,7 +10,15 @@ import { RolesModule } from './roles/roles.module';
 import { PlansModule } from './plans/plans.module';
 
 @Module({
-  imports: [UsersModule, RequisitosModule, ClassesModule, ExamsModule, ExamUserModule, RolesModule, PlansModule],
+  imports: [
+    UsersModule,
+    RequisitosModule,
+    ClassesModule,
+    ExamsModule,
+    ExamUserModule,
+    RolesModule,
+    PlansModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
