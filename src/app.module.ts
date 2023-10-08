@@ -8,6 +8,7 @@ import { ExamsModule } from './exams/exams.module';
 import { ExamUserModule } from './exam-user/exam-user.module';
 import { RolesModule } from './roles/roles.module';
 import { PlansModule } from './plans/plans.module';
+import { MuralModule } from './mural/mural.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { PlansModule } from './plans/plans.module';
     ExamUserModule,
     RolesModule,
     PlansModule,
+    MuralModule,
   ],
   controllers: [AppController],
   providers: [AppService],

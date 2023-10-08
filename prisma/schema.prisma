@@ -95,6 +95,6 @@ model Mural {
   date  DateTime @default(now())
   title String
 
-  Classes Classes? @relation(fields: [classFK], references: [id])
+  class   Classes? @relation(fields: [classFK], references: [id])
   classFK Int
 }
