@@ -16,6 +16,8 @@ export class UsersRepository {
   async create(createUserDto: CreateUserDto): Promise<UserEntity> {
     const { celphone, name } = createUserDto;
     try {
+      console.log(`Cel DTO: ${celphone}`);
+
       const create = await this.prisma.users.create({
         data: createUserDto,
       });
