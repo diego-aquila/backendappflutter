@@ -17,10 +17,7 @@ async function bootstrap() {
     }),
   );
   app.useGlobalFilters(new HttpExceptionFilter());
-  app.useGlobalInterceptors(new ConflictInterceptor());
-  app.useGlobalInterceptors(new DatabaseInterceptor());
-  app.useGlobalInterceptors(new NotFoundInterceptor());
-  app.useGlobalInterceptors(new UnauthorizedInterceptor());
+
   await app.listen(3000);
 }
 bootstrap();
