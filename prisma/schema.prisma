@@ -16,20 +16,20 @@ model Users {
 
   isActive Boolean @default(true)
   name     String
-  cpf      Int     @unique
+  cpf      String  @unique
 
   password String
   celphone String
-  class    Classes @relation(fields: [classFK], references: [name])
-  classFK  String
+  class    Classes @relation(fields: [classFK], references: [id])
+  classFK  Int
 
   ExamUser      ExamUser[]
   FeedbackExame FeedbackExam[]
 
-  Roles  Roles  @relation(fields: [roleFK], references: [name])
-  roleFK String
-  Plans  Plans  @relation(fields: [planFK], references: [name])
-  planFK String
+  role   Roles @relation(fields: [roleFK], references: [id])
+  roleFK Int
+  plan   Plans @relation(fields: [planFK], references: [id])
+  planFK Int
 }
 
 model Classes {
@@ -55,14 +55,14 @@ model ExamUser {
   exam    Exams @relation(fields: [examsFK], references: [id])
   examsFK Int
 
-  Users  Users @relation(fields: [userFK], references: [cpf])
-  userFK Int
+  user   Users  @relation(fields: [userFK], references: [cpf])
+  userFK String
 }
 
 model FeedbackExam {
   id        Int    @unique
-  Users     Users  @relation(fields: [usersIdFK], references: [id])
-  usersIdFK Int
+  Users     Users  @relation(fields: [usercpfFK], references: [cpf])
+  usercpfFK String
   result    String
   feedbacks Json
 
@@ -95,6 +95,6 @@ model Mural {
   date  DateTime @default(now())
   title String
 
-  Classes Classes? @relation(fields: [classFK], references: [name])
-  classFK String
+  class   Classes? @relation(fields: [classFK], references: [id])
+  classFK Int
 }
